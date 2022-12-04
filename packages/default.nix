@@ -18,11 +18,13 @@
     };
     chia-beta = final.callPackage ./chia-beta {};
     chia = final.callPackage ./chia {};
+    chia-dev-tools = final.callPackage ./chia-dev-tools {};
   });
 in {
   inherit
     (pkgs')
     chia
     chia-beta
+    chia-dev-tools
     ;
 }
