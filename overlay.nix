@@ -21,5 +21,10 @@ in {
         inherit (python) overrides;
       };
     };
+    chia = final.callPackage packages/chia {
+      python3Packages = final.python3Packages.override {
+        inherit (python) overrides;
+      };
+    };
   };
 }
