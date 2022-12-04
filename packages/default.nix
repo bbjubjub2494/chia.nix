@@ -31,5 +31,7 @@ in {
     chia
     chia-beta
     chia-dev-tools
+    # FIXME: it's useful to export this but it's not a derivation
+    python3Packages
     ;
 }
