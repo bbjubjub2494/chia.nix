@@ -2,7 +2,7 @@
   replaceOlder = refPkg: altPkg:
     if pkgs.lib.versionOlder (pkgs.lib.getVersion refPkg) (pkgs.lib.getVersion altPkg)
     then altPkg
-    else pkgs.lib.warn "chia.nix: not replacing ${refPkg} with ${altPkg} because it's not older" refPkg;
+    else pkgs.lib.warn "chia.nix: not replacing ${pkgs.lib.getName refPkg} ${pkgs.lib.getVersion refPkg} with ${pkgs.lib.getName altPkg} ${pkgs.lib.getVersion altPkg} because it's not older" refPkg;
   replaceOlderAttr = refs: alts:
     pkgs.lib.mapAttrs (name: pkg:
       if pkgs.lib.hasAttr name refs
