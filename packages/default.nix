@@ -24,13 +24,6 @@
 
             # https://nixpk.gs/pr-tracker.html?pr=202239
             typing-extensions = final'.callPackage ./typing-extensions {};
-
-            # https://nixpk.gs/pr-tracker.html?pr=202242
-            cryptography = final'.callPackage ./cryptography {
-              inherit (final.darwin) libiconv;
-              inherit (final.darwin.apple_sdk.frameworks) Security;
-              openssl = final.openssl_1_1;
-            };
           };
       };
     }
