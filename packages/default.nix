@@ -29,6 +29,7 @@
     }
     // replaceOlderAttr prev {
       chia-beta = final.callPackage ./chia-beta {};
+      chia-rc = final.callPackage ./chia-rc {};
       chia = final.callPackage ./chia {};
       chia-dev-tools = final.callPackage ./chia-dev-tools {};
     });
