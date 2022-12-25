@@ -38,6 +38,7 @@ in {
     (pkgs')
     chia
     chia-beta
+    chia-rc
     chia-dev-tools
     # FIXME: it's useful to export this but it's not a derivation
     python3Packages
