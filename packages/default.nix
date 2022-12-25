@@ -15,15 +15,15 @@
         overrides = final': prev':
           replaceOlderAttr prev' {
             # https://nixpk.gs/pr-tracker.html?pr=200769
-            blspy = final'.callPackage ./blspy {};
-            chia-rs = final'.callPackage ./chia-rs {};
-            chiapos = final'.callPackage ./chiapos {};
-            chiavdf = final'.callPackage ./chiavdf {};
-            clvm-tools = final'.callPackage ./clvm-tools {};
-            clvm-tools-rs = final'.callPackage ./clvm-tools-rs {};
+            blspy = final'.callPackage python/blspy {};
+            chia-rs = final'.callPackage python/chia-rs {};
+            chiapos = final'.callPackage python/chiapos {};
+            chiavdf = final'.callPackage python/chiavdf {};
+            clvm-tools = final'.callPackage python/clvm-tools {};
+            clvm-tools-rs = final'.callPackage python/clvm-tools-rs {};
 
             # https://nixpk.gs/pr-tracker.html?pr=202239
-            typing-extensions = final'.callPackage ./typing-extensions {};
+            typing-extensions = final'.callPackage python/typing-extensions {};
           };
       };
     }
