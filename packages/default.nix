@@ -27,9 +27,9 @@
           };
       };
     }
-    // replaceOlderAttr prev {
+    // replaceOlderAttr prev rec {
       chia-beta = final.callPackage ./chia-beta {};
-      chia-rc = final.chia;
+      chia-rc = chia;
       chia = final.callPackage ./chia {};
       chia-dev-tools = final.callPackage ./chia-dev-tools {};
     });
