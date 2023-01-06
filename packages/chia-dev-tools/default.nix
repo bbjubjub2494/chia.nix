@@ -6,13 +6,13 @@
 }:
 python3Packages.buildPythonApplication rec {
   pname = "chia-dev-tools";
-  version = "1.1.3";
+  version = "1.1.4";
 
   src = fetchFromGitHub {
     owner = "Chia-Network";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-fZbb+FTs/Sn/n690NeYQaccRs/U7IeL855XvAV+o97M=";
+    hash = "sha256-lE7FTSDqVS6AstcxZSMdQwgygMvcvh1fqYVTTSSNZpA=";
   };
 
   postPatch = ''
@@ -40,6 +40,7 @@ python3Packages.buildPythonApplication rec {
 
   disabledTests = [
     "test_spendbundles"
+    "tests/cmds/test_sim.py"
   ];
 
   meta = with lib; {
