@@ -32,6 +32,7 @@
       chia-rc = chia;
       chia = final.callPackage ./chia {};
       chia-dev-tools = final.callPackage ./chia-dev-tools {};
+      cat-admin-tool = final.callPackage ./cat-admin-tool {};
     });
 in {
   inherit
@@ -40,6 +41,7 @@ in {
     chia-beta
     chia-rc
     chia-dev-tools
+    cat-admin-tool
     # FIXME: it's useful to export this but it's not a derivation
     python3Packages
     ;
