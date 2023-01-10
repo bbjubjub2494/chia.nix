@@ -24,6 +24,8 @@
 
             # https://nixpk.gs/pr-tracker.html?pr=202239
             typing-extensions = final'.callPackage python/typing-extensions {};
+            # staging
+            watchdog = final'.callPackage python/watchdog {CoreServices = null;};
           };
       };
     }
@@ -43,6 +45,7 @@ in {
     chia-dev-tools
     cat-admin-tool
     # FIXME: it's useful to export this but it's not a derivation
+    
     python3Packages
     ;
 }
