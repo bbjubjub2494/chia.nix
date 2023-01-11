@@ -1,4 +1,4 @@
-{pkgs}: let
+{inputs, pkgs}: let
   replaceOlder = refPkg: altPkg:
     if pkgs.lib.versionOlder (pkgs.lib.getVersion refPkg) (pkgs.lib.getVersion altPkg)
     then altPkg
@@ -34,7 +34,9 @@
       chia-rc = chia;
       chia = final.callPackage ./chia {};
       chia-dev-tools = final.callPackage ./chia-dev-tools {};
-      cat-admin-tool = final.callPackage ./cat-admin-tool {};
+      cat-admin-tool = final.callPackage ./cat-admin-tool {
+        src = inputs.cat-admin-tool;
+      };
     });
 in {
   inherit

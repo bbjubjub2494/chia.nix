@@ -6,6 +6,8 @@
   inputs.fup.url = "github:gytis-ivaskevicius/flake-utils-plus/v1.3.1";
   inputs.flake-compat.url = "github:edolstra/flake-compat";
   inputs.flake-compat.flake = false;
+  inputs.cat-admin-tool.url = "github:Chia-Network/CAT-admin-tool";
+  inputs.cat-admin-tool.flake = false;
 
   # Outputs are the public-facing interface to the flake.
   outputs = inputs @ {
@@ -17,7 +19,7 @@
     fup.lib.mkFlake {
       inherit self inputs;
 
-      overlays.default = import ./overlay.nix;
+      overlays.default = import ./overlay.nix inputs;
 
       channels.nixpkgs.overlaysBuilder = _: [
         self.overlays.default

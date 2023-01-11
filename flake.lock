@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "cat-admin-tool": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1667832842,
+        "narHash": "sha256-R3FNpzwoAi//wBN80SOTBVIZ3rw+KF9oNjsC8rd/R9U=",
+        "owner": "Chia-Network",
+        "repo": "CAT-admin-tool",
+        "rev": "7cab4a3bf9a486892352d0fa69d99f8730bd8630",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Chia-Network",
+        "repo": "CAT-admin-tool",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -66,6 +82,7 @@
     },
     "root": {
       "inputs": {
+        "cat-admin-tool": "cat-admin-tool",
         "flake-compat": "flake-compat",
         "fup": "fup",
         "nixpkgs": "nixpkgs"
