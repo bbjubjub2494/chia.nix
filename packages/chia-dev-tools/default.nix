@@ -1,6 +1,7 @@
 {
   lib,
   fetchFromGitHub,
+  substituteAll,
   python3Packages,
   chia,
 }:
@@ -14,6 +15,13 @@ python3Packages.buildPythonApplication rec {
     rev = "v${version}";
     hash = "sha256-lE7FTSDqVS6AstcxZSMdQwgygMvcvh1fqYVTTSSNZpA=";
   };
+
+  patches = [
+    (substituteAll {
+      src = ./fix-paths.patch;
+      inherit chia;
+    })
+  ];
 
   postPatch = ''
     substituteInPlace setup.py \
@@ -38,9 +46,11 @@ python3Packages.buildPythonApplication rec {
     pytestCheckHook
   ];
 
+  preCheck = "export HOME=$(mktemp -d)";
+  postCheck = "unset HOME";
+
   disabledTests = [
     "test_spendbundles"
-    "tests/cmds/test_sim.py"
   ];
 
   meta = with lib; {
