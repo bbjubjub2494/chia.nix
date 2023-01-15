@@ -1,18 +1,18 @@
-{
-  stdenv,
-  lib,
-  substituteAll,
-  buildPythonPackage,
-  fetchPypi,
-  catch2,
-  cmake,
-  cxxopts,
-  ghc_filesystem,
-  pybind11,
-  pytestCheckHook,
-  pythonOlder,
-  psutil,
-  setuptools-scm,
+{ stdenv
+, lib
+, substituteAll
+, buildPythonPackage
+, fetchPypi
+, catch2
+, cmake
+, cxxopts
+, ghc_filesystem
+, pybind11
+, pytestCheckHook
+, pythonOlder
+, psutil
+, setuptools-scm
+,
 }:
 buildPythonPackage rec {
   pname = "chiapos";
@@ -34,9 +34,9 @@ buildPythonPackage rec {
     })
   ];
 
-  nativeBuildInputs = [cmake setuptools-scm];
+  nativeBuildInputs = [ cmake setuptools-scm ];
 
-  buildInputs = [pybind11];
+  buildInputs = [ pybind11 ];
 
   checkInputs = [
     psutil

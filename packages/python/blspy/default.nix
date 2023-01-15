@@ -1,15 +1,15 @@
-{
-  lib,
-  buildPythonPackage,
-  fetchPypi,
-  fetchFromGitHub,
-  setuptools-scm,
-  substituteAll,
-  cmake,
-  boost,
-  gmp,
-  pybind11,
-  pythonOlder,
+{ lib
+, buildPythonPackage
+, fetchPypi
+, fetchFromGitHub
+, setuptools-scm
+, substituteAll
+, cmake
+, boost
+, gmp
+, pybind11
+, pythonOlder
+,
 }:
 buildPythonPackage rec {
   pname = "blspy";
@@ -48,9 +48,9 @@ buildPythonPackage rec {
     })
   ];
 
-  nativeBuildInputs = [cmake setuptools-scm];
+  nativeBuildInputs = [ cmake setuptools-scm ];
 
-  buildInputs = [boost gmp.static pybind11];
+  buildInputs = [ boost gmp.static pybind11 ];
 
   pythonImportsCheck = [
     "blspy"

@@ -1,9 +1,9 @@
-{
-  lib,
-  fetchFromGitHub,
-  buildPythonPackage,
-  rustPlatform,
-  pythonOlder,
+{ lib
+, fetchFromGitHub
+, buildPythonPackage
+, rustPlatform
+, pythonOlder
+,
 }:
 buildPythonPackage rec {
   pname = "clvm-tools-rs";
@@ -29,7 +29,7 @@ buildPythonPackage rec {
     maturinBuildHook
   ];
 
-  pythonImportsCheck = ["clvm_tools_rs"];
+  pythonImportsCheck = [ "clvm_tools_rs" ];
 
   meta = with lib; {
     homepage = "https://chialisp.com/";

@@ -1,9 +1,9 @@
-{
-  lib,
-  src,
-  fetchFromGitHub,
-  python3Packages,
-  chia,
+{ lib
+, src
+, fetchFromGitHub
+, python3Packages
+, chia
+,
 }:
 python3Packages.buildPythonApplication rec {
   pname = "CAT-admin-tool";
@@ -34,7 +34,7 @@ python3Packages.buildPythonApplication rec {
   meta = with lib; {
     homepage = "https://www.chia.net/";
     description = "Admin tool for issuing CATs";
-    license = with licenses; [asl20];
+    license = with licenses; [ asl20 ];
     maintainers = teams.chia.members;
     platforms = platforms.all;
   };

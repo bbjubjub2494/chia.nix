@@ -1,10 +1,10 @@
-{
-  lib,
-  buildPythonPackage,
-  fetchPypi,
-  flit-core,
-  python,
-  pythonOlder,
+{ lib
+, buildPythonPackage
+, fetchPypi
+, flit-core
+, python
+, pythonOlder
+,
 }:
 buildPythonPackage rec {
   pname = "typing-extensions";
@@ -35,6 +35,6 @@ buildPythonPackage rec {
     description = "Backported and Experimental Type Hints for Python 3.5+";
     homepage = "https://github.com/python/typing";
     license = licenses.psfl;
-    maintainers = with maintainers; [pmiddend];
+    maintainers = with maintainers; [ pmiddend ];
   };
 }

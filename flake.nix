@@ -10,12 +10,7 @@
   inputs.cat-admin-tool.flake = false;
 
   # Outputs are the public-facing interface to the flake.
-  outputs = inputs @ {
-    self,
-    fup,
-    nixpkgs,
-    ...
-  }:
+  outputs = { self, fup, nixpkgs, ... } @ inputs:
     fup.lib.mkFlake {
       inherit self inputs;
 
@@ -26,7 +21,7 @@
       ];
 
       outputsBuilder = channels: {
-        formatter = channels.nixpkgs.alejandra;
+        formatter = channels.nixpkgs.nixpkgs-fmt;
         packages = channels.nixpkgs.chiaNix;
       };
     };
