@@ -37,16 +37,17 @@ python3Packages.buildPythonApplication rec {
 
   propagatedBuildInputs = with python3Packages; [
     (toPythonModule chia)
-    pytest
-    pytest-asyncio
     pytimeparse
   ];
 
   checkInputs = with python3Packages; [
     pytestCheckHook
+    pytest-asyncio
   ];
 
-  preCheck = "export HOME=$(mktemp -d)";
+  preCheck = ''
+    export HOME=$(mktemp -d)
+  '';
   postCheck = "unset HOME";
 
   disabledTests = [
@@ -55,9 +56,8 @@ python3Packages.buildPythonApplication rec {
 
   meta = with lib; {
     homepage = "https://www.chia.net/";
-    description = "A utility for developing in the Chia ecosystem: Chialisp functions, object inspection, RPC client and more";
+    description = "Utility for developing in the Chia ecosystem: Chialisp functions, object inspection, RPC client and more";
     license = with licenses; [ asl20 ];
     maintainers = teams.chia.members;
-    platforms = platforms.all;
   };
 }
