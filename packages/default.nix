@@ -33,6 +33,9 @@ let
       };
     }
     // replaceOlderAttr prev rec {
+      # https://nixpk.gs/pr-tracker.html?pr=201542
+      bladebit = final.callPackage ./bladebit { };
+
       # https://nixpk.gs/pr-tracker.html?pr=208955
       chia = final.callPackage ./chia { };
 
@@ -50,6 +53,7 @@ in
 {
   inherit
     (pkgs')
+    bladebit
     chia
     chia-beta
     chia-rc
