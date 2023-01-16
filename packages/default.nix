@@ -26,19 +26,25 @@ let
 
             # https://nixpk.gs/pr-tracker.html?pr=202239
             typing-extensions = final'.callPackage python/typing-extensions { };
-            # staging
+
+            # https://nixpk.gs/pr-tracker.html?pr=209180
             watchdog = final'.callPackage python/watchdog { CoreServices = null; };
           };
       };
     }
     // replaceOlderAttr prev rec {
-      chia-beta = final.callPackage ./chia-beta { };
-      chia-rc = chia;
+      # https://nixpk.gs/pr-tracker.html?pr=208955
       chia = final.callPackage ./chia { };
+
+      # https://nixpk.gs/pr-tracker.html?pr=210765
       chia-dev-tools = final.callPackage ./chia-dev-tools { };
+
+      # not suitable for Nixpkgs
       cat-admin-tool = final.callPackage ./cat-admin-tool {
         src = inputs.cat-admin-tool;
       };
+      chia-beta = final.callPackage ./chia-beta { };
+      chia-rc = chia;
     });
 in
 {
