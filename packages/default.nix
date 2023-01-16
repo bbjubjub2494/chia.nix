@@ -48,6 +48,7 @@ let
       };
       chia-beta = final.callPackage ./chia-beta { };
       chia-rc = chia;
+      chia-plotter = final.callPackage ./chia-plotter { };
     });
 in
 {
@@ -58,6 +59,7 @@ in
     chia-beta
     chia-rc
     chia-dev-tools
+    chia-plotter
     cat-admin-tool
     # FIXME: it's useful to export this but it's not a derivation
 
