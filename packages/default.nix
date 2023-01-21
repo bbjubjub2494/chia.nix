@@ -16,38 +16,21 @@ let
       python3Packages = prev.python3Packages.override {
         overrides = final': prev':
           replaceOlderAttr prev' {
-            # https://nixpk.gs/pr-tracker.html?pr=200769
-            blspy = final'.callPackage python/blspy { };
             chia-rs = final'.callPackage python/chia-rs { };
-            chiapos = final'.callPackage python/chiapos { };
-            chiavdf = final'.callPackage python/chiavdf { };
-            clvm-tools = final'.callPackage python/clvm-tools { };
             clvm-tools-rs = final'.callPackage python/clvm-tools-rs { };
-
-            # https://nixpk.gs/pr-tracker.html?pr=202239
-            typing-extensions = final'.callPackage python/typing-extensions { };
-
-            # https://nixpk.gs/pr-tracker.html?pr=209180
-            watchdog = final'.callPackage python/watchdog { CoreServices = null; };
           };
       };
     }
-    // replaceOlderAttr prev rec {
+    // replaceOlderAttr prev {
       # https://nixpk.gs/pr-tracker.html?pr=201542
       bladebit = final.callPackage ./bladebit { };
-
-      # https://nixpk.gs/pr-tracker.html?pr=208955
-      chia = final.callPackage ./chia { };
-
-      # https://nixpk.gs/pr-tracker.html?pr=210765
-      chia-dev-tools = final.callPackage ./chia-dev-tools { };
 
       # not suitable for Nixpkgs
       cat-admin-tool = final.callPackage ./cat-admin-tool {
         src = inputs.cat-admin-tool;
       };
       chia-beta = final.callPackage ./chia-beta { };
-      chia-rc = chia;
+      chia-rc = final.chia;
       chia-plotter = final.callPackage ./chia-plotter { };
     });
 in
