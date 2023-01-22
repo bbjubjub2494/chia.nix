@@ -16,10 +16,8 @@
 
       supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
 
-      overlays.default = import ./overlay.nix inputs;
-
       channels.nixpkgs.overlaysBuilder = _: [
-        self.overlays.default
+        (import ./overlay.nix inputs)
       ];
 
       outputsBuilder = channels: {
