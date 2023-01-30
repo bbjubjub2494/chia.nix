@@ -32,6 +32,8 @@ let
       chia-beta = final.chia-rc;
       chia-rc = final.callPackage ./chia-rc { };
       chia-plotter = final.callPackage ./chia-plotter { };
+    } // {
+      chia-dev-tools = final.callPackage ./chia-dev-tools { };
     });
 in
 {
