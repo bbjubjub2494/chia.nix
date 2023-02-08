@@ -8,14 +8,14 @@
 let
   chia = python3Packages.buildPythonApplication rec {
     pname = "chia";
-    version = "1.7.0-rc6";
+    version = "1.7.0-rc7";
 
     src = fetchFromGitHub {
       owner = "Chia-Network";
       repo = "chia-blockchain";
       rev = version;
       fetchSubmodules = true;
-      hash = "sha256-kdxp70AM+LtilqwLOYpVb3ybFrPEDwsxH8RRuhHCqiI=";
+      hash = "sha256-3qHSxAXgpBrP2v86O06UrHuInQ08TO5G8l4u2zJGVZg=";
     };
 
     postPatch = ''
