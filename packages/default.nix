@@ -29,8 +29,9 @@ let
       cat-admin-tool = final.callPackage ./cat-admin-tool {
         src = inputs.cat-admin-tool;
       };
-      chia-beta = final.chia-rc;
-      chia-rc = final.callPackage ./chia-rc { };
+      chia-beta = final.chia;
+      chia-rc = final.chia;
+      chia = final.callPackage ./chia { };
       chia-plotter = final.callPackage ./chia-plotter { };
     } // {
       chia-dev-tools = final.callPackage ./chia-dev-tools { };
