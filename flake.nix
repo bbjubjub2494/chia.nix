@@ -25,7 +25,7 @@
         overlayAttrs = import ./overlay.nix inputs final prev;
 
         formatter = final.nixpkgs-fmt;
-        packages = final.chiaNix;
+        legacyPackages = final.chiaNix;
       };
     };
 }
