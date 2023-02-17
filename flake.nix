@@ -15,17 +15,30 @@
   # Outputs are the public-facing interface to the flake.
   outputs = { self, flake-parts, nixpkgs, ... } @ inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [
-        inputs.flake-parts.flakeModules.easyOverlay
-      ];
-
       systems = [ "x86_64-linux" "aarch64-linux" ];
 
-      perSystem = { final, prev, ... }: {
-        overlayAttrs = import ./overlay.nix inputs final prev;
+      perSystem = { pkgs, ... }:
+        let
+          pkgs' = import ./packages { inherit inputs pkgs; };
+        in
+        {
+          formatter = pkgs.nixpkgs-fmt;
+          packages = {
+            inherit
+              (pkgs')
+              bladebit
+              chia
+              chia-beta
+              chia-rc
+              chia-dev-tools
+              chia-plotter
+              cat-admin-tool
+              ;
+          };
 
-        formatter = final.nixpkgs-fmt;
-        legacyPackages = final.chiaNix;
-      };
+          legacyPackages = {
+            inherit (pkgs') python3Packages;
+          };
+        };
     };
 }
