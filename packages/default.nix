@@ -18,6 +18,7 @@ let
           replaceOlderAttr prev' {
             chia-rs = final'.callPackage python/chia-rs { };
             clvm-tools-rs = final'.callPackage python/clvm-tools-rs { };
+            packaging = final'.callPackage python/packaging { };
           };
       };
     }
