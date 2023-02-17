@@ -22,6 +22,7 @@ pkgs.extend (final: prev:
           clvm-tools-rs = final'.callPackage python/clvm-tools-rs { };
           cryptography = final'.callPackage python/cryptography { };
           packaging = final'.callPackage python/packaging { };
+          pyopenssl = final'.callPackage python/pyopenssl { };
         } // {
         build = final'.callPackage python/build { };
       };
