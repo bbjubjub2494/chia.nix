@@ -23,6 +23,7 @@ pkgs.extend (final: prev:
           cryptography = final'.callPackage python/cryptography { };
           packaging = final'.callPackage python/packaging { };
           pyopenssl = final'.callPackage python/pyopenssl { };
+          zstd = final'.callPackage python/zstd { inherit (final) zstd; };
         } // {
         build = final'.callPackage python/build { };
       };
