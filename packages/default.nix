@@ -20,6 +20,7 @@ pkgs.extend (final: prev:
         {
           chia-rs = final'.callPackage python/chia-rs { };
           clvm-tools-rs = final'.callPackage python/clvm-tools-rs { };
+          cryptography = final'.callPackage python/cryptography { };
           packaging = final'.callPackage python/packaging { };
         } // {
         build = final'.callPackage python/build { };
