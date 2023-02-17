@@ -50,8 +50,8 @@ in
     chia-dev-tools
     chia-plotter
     cat-admin-tool
-    # FIXME: it's useful to export this but it's not a derivation
 
+    # NOTE: this is not a derivation
     python3Packages
     ;
 }
