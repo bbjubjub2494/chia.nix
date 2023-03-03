@@ -18,12 +18,14 @@ pkgs.extend (final: prev:
     overrides = final': prev':
       replaceOlderAttr prev'
         {
-          chia-rs = final'.callPackage python/chia-rs { };
+          chia-rs_0_2_2 = final'.callPackage python/chia-rs_0_2_2 { };
+          chia-rs_0_2_0 = final'.callPackage python/chia-rs_0_2_0 { };
           clvm-tools-rs = final'.callPackage python/clvm-tools-rs { };
           cryptography = final'.callPackage python/cryptography { };
           packaging = final'.callPackage python/packaging { };
           pyopenssl = final'.callPackage python/pyopenssl { };
           zstd = final'.callPackage python/zstd { inherit (final) zstd; };
+          chia-rs = final'.chia-rs_0_2_0;
         } // {
         build = final'.callPackage python/build { };
       };
@@ -36,7 +38,7 @@ pkgs.extend (final: prev:
   cat-admin-tool = final.callPackage ./cat-admin-tool {
     src = inputs.cat-admin-tool;
   };
-  chia-beta = final.callPackage ./chia-beta { };
+  chia-beta = final.callPackage ./chia-beta { python3Packages = final.python3Packages // { chia-rs = final.python3Packages.chia-rs_0_2_2; }; };
   chia-rc = final.chia;
   chia = final.callPackage ./chia { };
   chia-plotter = final.callPackage ./chia-plotter { };
