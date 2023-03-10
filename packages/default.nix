@@ -18,6 +18,7 @@ pkgs.extend (final: prev:
     overrides = final': prev':
       replaceOlderAttr prev'
         {
+          aiofiles = final'.callPackage python/aiofiles { };
           aiohttp = final'.callPackage python/aiohttp { };
           chia-rs_0_2_2 = final'.callPackage python/chia-rs_0_2_2 { };
           chia-rs_0_2_0 = final'.callPackage python/chia-rs_0_2_0 { };
