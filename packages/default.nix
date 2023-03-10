@@ -26,6 +26,7 @@ pkgs.extend (final: prev:
           cryptography = final'.callPackage python/cryptography { };
           packaging = final'.callPackage python/packaging { };
           pyopenssl = final'.callPackage python/pyopenssl { };
+          typing-extensions = final'.callPackage python/typing-extensions { };
           zstd = final'.callPackage python/zstd { inherit (final) zstd; };
           chia-rs = final'.chia-rs_0_2_0;
         } // {
