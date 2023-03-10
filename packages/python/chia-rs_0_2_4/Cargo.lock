@@ -141,7 +141,7 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
 name = "chia"
-version = "0.2.3"
+version = "0.2.4"
 dependencies = [
  "chia-protocol",
  "clvm-utils",
@@ -154,7 +154,7 @@ dependencies = [
 
 [[package]]
 name = "chia-bls"
-version = "0.2.3"
+version = "0.2.4"
 dependencies = [
  "anyhow",
  "bls12_381_plus",
@@ -170,7 +170,7 @@ dependencies = [
 
 [[package]]
 name = "chia-protocol"
-version = "0.2.3"
+version = "0.2.4"
 dependencies = [
  "chia_py_streamable_macro",
  "chia_streamable_macro",
@@ -202,7 +202,7 @@ dependencies = [
 
 [[package]]
 name = "chia_rs"
-version = "0.2.3"
+version = "0.2.4"
 dependencies = [
  "chia",
  "chia-protocol",
@@ -223,7 +223,7 @@ dependencies = [
 
 [[package]]
 name = "chia_wasm"
-version = "0.2.3"
+version = "0.2.4"
 dependencies = [
  "chia",
  "wasm-bindgen",
@@ -317,7 +317,7 @@ dependencies = [
 
 [[package]]
 name = "clvm-utils"
-version = "0.2.3"
+version = "0.2.4"
 dependencies = [
  "clvmr",
 ]
