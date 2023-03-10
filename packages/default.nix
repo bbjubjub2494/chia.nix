@@ -21,14 +21,9 @@ pkgs.extend (final: prev:
           aiofiles = final'.callPackage python/aiofiles { };
           aiohttp = final'.callPackage python/aiohttp { };
           chia-rs_0_2_4 = final'.callPackage python/chia-rs_0_2_4 { };
-          chia-rs_0_2_0 = final'.callPackage python/chia-rs_0_2_0 { };
-          clvm-tools-rs = final'.callPackage python/clvm-tools-rs { };
-          cryptography = final'.callPackage python/cryptography { };
           packaging = final'.callPackage python/packaging { };
-          pyopenssl = final'.callPackage python/pyopenssl { };
           typing-extensions = final'.callPackage python/typing-extensions { };
           zstd = final'.callPackage python/zstd { inherit (final) zstd; };
-          chia-rs = final'.chia-rs_0_2_0;
         } // {
         build = final'.callPackage python/build { };
       };
@@ -43,8 +38,5 @@ pkgs.extend (final: prev:
   };
   chia-beta = final.callPackage ./chia-beta { python3Packages = final.python3Packages // { chia-rs = final.python3Packages.chia-rs_0_2_4; }; };
   chia-rc = final.callPackage ./chia-rc { python3Packages = final.python3Packages // { chia-rs = final.python3Packages.chia-rs_0_2_4; }; };
-  chia = final.callPackage ./chia { };
   chia-plotter = final.callPackage ./chia-plotter { };
-} // {
-  chia-dev-tools = final.callPackage ./chia-dev-tools { };
 })
