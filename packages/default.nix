@@ -42,7 +42,7 @@ pkgs.extend (final: prev:
     src = inputs.cat-admin-tool;
   };
   chia-beta = final.callPackage ./chia-beta { python3Packages = final.python3Packages // { chia-rs = final.python3Packages.chia-rs_0_2_4; }; };
-  chia-rc = final.chia;
+  chia-rc = final.callPackage ./chia-rc { python3Packages = final.python3Packages // { chia-rs = final.python3Packages.chia-rs_0_2_4; }; };
   chia = final.callPackage ./chia { };
   chia-plotter = final.callPackage ./chia-plotter { };
 } // {
