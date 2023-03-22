@@ -20,7 +20,7 @@ pkgs.extend (final: prev:
         {
           aiofiles = final'.callPackage python/aiofiles { };
           aiohttp = final'.callPackage python/aiohttp { };
-          chia-rs_0_2_4 = final'.callPackage python/chia-rs_0_2_4 { };
+          chia-rs = final'.callPackage python/chia-rs { };
           packaging = final'.callPackage python/packaging { };
           typing-extensions = final'.callPackage python/typing-extensions { };
           zstd = final'.callPackage python/zstd { inherit (final) zstd; };
@@ -36,7 +36,8 @@ pkgs.extend (final: prev:
   cat-admin-tool = final.callPackage ./cat-admin-tool {
     src = inputs.cat-admin-tool;
   };
-  chia-beta = final.callPackage ./chia-beta { python3Packages = final.python3Packages // { chia-rs = final.python3Packages.chia-rs_0_2_4; }; };
-  chia-rc = final.callPackage ./chia-rc { python3Packages = final.python3Packages // { chia-rs = final.python3Packages.chia-rs_0_2_4; }; };
+  chia = final.callPackage ./chia { };
+  chia-beta = final.callPackage ./chia-beta { };
+  chia-rc = final.chia;
   chia-plotter = final.callPackage ./chia-plotter { };
 })
