@@ -28,6 +28,7 @@ pkgs.extend (final: prev:
         build = final'.callPackage python/build { };
       };
   };
+  chia-dev-tools = final.callPackage ./chia-dev-tools { };
 } // replaceOlderAttr prev {
   # https://nixpk.gs/pr-tracker.html?pr=201542
   bladebit = final.callPackage ./bladebit { };
