@@ -19,14 +19,8 @@ pkgs.extend (final: prev:
       replaceOlderAttr prev'
         {
           aiofiles = final'.callPackage python/aiofiles { };
-          aiohttp = final'.callPackage python/aiohttp { };
           chia-rs = final'.callPackage python/chia-rs { };
-          packaging = final'.callPackage python/packaging { };
-          typing-extensions = final'.callPackage python/typing-extensions { };
-          zstd = final'.callPackage python/zstd { inherit (final) zstd; };
-        } // {
-        build = final'.callPackage python/build { };
-      };
+        };
   };
   chia-dev-tools = final.callPackage ./chia-dev-tools { };
 } // replaceOlderAttr prev {
