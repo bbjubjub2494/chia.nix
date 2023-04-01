@@ -18,7 +18,6 @@ pkgs.extend (final: prev:
     overrides = final': prev':
       replaceOlderAttr prev'
         {
-          aiofiles = final'.callPackage python/aiofiles { };
           chia-rs = final'.callPackage python/chia-rs { };
         };
   };
