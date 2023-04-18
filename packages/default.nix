@@ -18,6 +18,8 @@ pkgs.extend (final: prev:
     overrides = final': prev':
       replaceOlderAttr prev'
         {
+          boto3 = final'.callPackage python/boto3 { };
+          botocore = final'.callPackage python/botocore { };
           chia-rs = final'.callPackage python/chia-rs { };
         };
   };
