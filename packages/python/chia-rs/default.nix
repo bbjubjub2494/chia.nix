@@ -7,13 +7,13 @@
 }:
 buildPythonPackage rec {
   pname = "chia-rs";
-  version = "0.2.6";
+  version = "0.2.7";
 
   src = fetchFromGitHub {
     owner = "chia-network";
     repo = "chia_rs";
     rev = version;
-    hash = "sha256-Xgi7NpTOg6ziUjDCDslRhU6aO1QqRkRDyiV+nKIHWXU=";
+    hash = "sha256-9GrthOqUAv1R4nJ6mIuWJoMU2YZcqTu7pGYe/Y9gEtk=";
   };
 
   patches = [
