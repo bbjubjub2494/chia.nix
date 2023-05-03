@@ -8,14 +8,14 @@
 let
   chia = python3Packages.buildPythonApplication rec {
     pname = "chia";
-    version = "1.7.1";
+    version = "1.8.0";
 
     src = fetchFromGitHub {
       owner = "Chia-Network";
       repo = "chia-blockchain";
       rev = version;
       fetchSubmodules = true;
-      hash = "sha256-jrv2/59PL/x/FG/m4YcIlQ/bnzwzwY5qPzL9KB8v/wk=";
+      hash = "sha256-A7XIjkaE5RIeKez5jGO+WjA1+qy353c5vQtXZYONees=";
     };
 
     postPatch = ''
@@ -38,6 +38,7 @@ let
       aiosqlite
       anyio
       bitstring
+      boto3
       blspy
       chiapos
       chiavdf
