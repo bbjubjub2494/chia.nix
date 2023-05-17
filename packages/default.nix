@@ -35,7 +35,7 @@ pkgs.extend (final: prev:
     src = inputs.cat-admin-tool;
   };
   chia = final.callPackage ./chia { };
-  chia-beta = final.chia;
+  chia-beta = final.callPackage ./chia-beta {};
   chia-rc = final.callPackage ./chia-rc {};
   chia-plotter = final.callPackage ./chia-plotter { };
 })
