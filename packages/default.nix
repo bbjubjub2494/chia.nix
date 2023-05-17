@@ -36,6 +36,6 @@ pkgs.extend (final: prev:
   };
   chia = final.callPackage ./chia { };
   chia-beta = final.chia;
-  chia-rc = final.chia;
+  chia-rc = final.callPackage ./chia-rc {};
   chia-plotter = final.callPackage ./chia-plotter { };
 })
