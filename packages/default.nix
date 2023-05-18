@@ -18,7 +18,6 @@ pkgs.extend (final: prev:
     overrides = final': prev':
       replaceOlderAttr prev'
         {
-          aiosqlite = final'.callPackage python/aiosqlite { };
           boto3 = final'.callPackage python/boto3 { };
           botocore = final'.callPackage python/botocore { };
           filelock = final'.callPackage python/filelock { };
