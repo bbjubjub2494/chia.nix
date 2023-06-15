@@ -22,6 +22,8 @@ pkgs.extend (final: prev:
           botocore = final'.callPackage python/botocore { };
           filelock = final'.callPackage python/filelock { };
           chia-rs = final'.callPackage python/chia-rs { };
+        } // {
+          twisted = prev'.twisted.overrideAttrs (_: { doInstallCheck = false; });
         };
   };
   chia-dev-tools = final.callPackage ./chia-dev-tools { };
