@@ -13,7 +13,7 @@ let chia = python3Packages.buildPythonApplication rec {
     repo = "chia-blockchain";
     rev = version;
     fetchSubmodules = true;
-    hash = "sha256-A7XIjkaE5RIeKez5jGO+WjA1+qy353c5vQtXZYONees=";
+    hash = "sha256-gJE8qXfkyMrPFHaqQ69we6dTpDbpgjAr/CCqtmKJbpI=";
   };
 
   postPatch = ''
