@@ -24,8 +24,8 @@ pkgs.extend (final: prev:
           filelock = final'.callPackage python/filelock { };
           chia-rs = final'.callPackage python/chia-rs { };
         } // {
-          twisted = prev'.twisted.overrideAttrs (_: { doInstallCheck = false; });
-        };
+        twisted = prev'.twisted.overrideAttrs (_: { doInstallCheck = false; });
+      };
   };
   chia-dev-tools = final.callPackage ./chia-dev-tools { };
 } // replaceOlderAttr prev {
@@ -37,7 +37,8 @@ pkgs.extend (final: prev:
     src = inputs.cat-admin-tool;
   };
   chia = final.callPackage ./chia { };
-  chia-beta = final.callPackage ./chia-beta {};
-  chia-rc = final.callPackage ./chia-rc {};
+  chia-beta = final.callPackage ./chia-beta { };
+  chia-rc = final.callPackage ./chia-rc { };
   chia-plotter = final.callPackage ./chia-plotter { };
+  dexie-rewards = final.callPackage ./dexie-rewards { };
 })

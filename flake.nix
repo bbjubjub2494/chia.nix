@@ -39,6 +39,7 @@
               chia-dev-tools
               chia-plotter
               cat-admin-tool
+              dexie-rewards
               ;
           };
 
