@@ -10,14 +10,14 @@
 
 buildPythonPackage rec {
   pname = "boto3";
-  version = "1.26.111";
+  version = "1.26.131";
   format = "pyproject";
 
   src = fetchFromGitHub {
     owner = "boto";
     repo = pname;
     rev = version;
-    hash = "sha256-rZMhjNCF7tPJasT4QrLfBHK4Vym9LGFfAFEDzjB383U=";
+    hash = "sha256-7UYH1va6G6tQ+BvZiszMf5nIS2yBs1z1wnCOzXtrbwg=";
   };
 
   propagatedBuildInputs = [
