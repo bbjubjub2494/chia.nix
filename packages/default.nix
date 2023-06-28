@@ -21,7 +21,6 @@ pkgs.extend (final: prev:
           based58 = final'.callPackage python/based58 { };
           boto3 = final'.callPackage python/boto3 { };
           botocore = final'.callPackage python/botocore { };
-          filelock = final'.callPackage python/filelock { };
           chia-rs = final'.callPackage python/chia-rs { };
           chiavdf = final'.callPackage python/chiavdf { };
         } // {
