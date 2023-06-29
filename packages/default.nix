@@ -23,6 +23,10 @@ pkgs.extend (final: prev:
           botocore = final'.callPackage python/botocore { };
           chia-rs = final'.callPackage python/chia-rs { };
           chiavdf = final'.callPackage python/chiavdf { };
+          cryptography = final'.callPackage python/cryptography {
+            Security = if final.stdenv.isDarwin then final.Security else null;
+          };
+          packaging = final'.callPackage python/packaging { };
           typing-extensions = final'.callPackage python/typing-extensions { };
           zstd = final'.callPackage python/zstd { inherit (final) zstd; };
         } // {
