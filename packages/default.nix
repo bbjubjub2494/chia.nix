@@ -24,6 +24,7 @@ pkgs.extend (final: prev:
           chia-rs = final'.callPackage python/chia-rs { };
           chiavdf = final'.callPackage python/chiavdf { };
           typing-extensions = final'.callPackage python/typing-extensions { };
+          zstd = final'.callPackage python/zstd { inherit (final) zstd; };
         } // {
         twisted = prev'.twisted.overrideAttrs (_: { doInstallCheck = false; });
       };
