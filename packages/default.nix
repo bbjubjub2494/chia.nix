@@ -23,6 +23,7 @@ pkgs.extend (final: prev:
           botocore = final'.callPackage python/botocore { };
           chia-rs = final'.callPackage python/chia-rs { };
           chiavdf = final'.callPackage python/chiavdf { };
+          typing-extensions = final'.callPackage python/typing-extensions { };
         } // {
         twisted = prev'.twisted.overrideAttrs (_: { doInstallCheck = false; });
       };
