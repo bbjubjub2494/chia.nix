@@ -10,13 +10,13 @@
 
 stdenv.mkDerivation rec {
   pname = "bladebit";
-  version = "2.0.1";
+  version = "3.0.0";
 
   src = fetchFromGitHub {
     owner = "Chia-Network";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-d82oAnAfLYogAR7Mertg88IrdO+kME9f/bh8ebIn6Rs=";
+    hash = "sha256-CEpyaWI0FhDUnMJG0IFpWWrjVRlNKEOLPzUBBjQLkTw=";
   };
 
   patches = [
