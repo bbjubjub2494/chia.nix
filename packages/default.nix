@@ -22,6 +22,7 @@ pkgs.extend (final: prev:
           boto3 = final'.callPackage python/boto3 { };
           botocore = final'.callPackage python/botocore { };
           chia-rs = final'.callPackage python/chia-rs { };
+          clvm-tools-rs = final'.callPackage python/clvm-tools-rs { };
           chiavdf = final'.callPackage python/chiavdf { };
           cryptography = final'.callPackage python/cryptography {
             Security = if final.stdenv.isDarwin then final.Security else null;
