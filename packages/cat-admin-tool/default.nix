@@ -25,6 +25,7 @@ python3Packages.buildPythonApplication rec {
 
   propagatedBuildInputs = with python3Packages; [
     (toPythonModule chia)
+    pytest-asyncio
   ];
 
   checkInputs = with python3Packages; [
