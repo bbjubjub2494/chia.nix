@@ -3,11 +3,11 @@
     "cat-admin-tool": {
       "flake": false,
       "locked": {
-        "lastModified": 1693358947,
-        "narHash": "sha256-mwwZ7T5M2pk/2z0XhVlGErNTJLsW+oKIJVWhwVx2+sI=",
+        "lastModified": 1696955870,
+        "narHash": "sha256-7L8ZRTEgD+N20dXqaKk75JjsrSaJDHC1eD8uv02YKDU=",
         "owner": "Chia-Network",
         "repo": "CAT-admin-tool",
-        "rev": "b58d0f2b9aee07f4651dd8ab5e954129d2fbe6a4",
+        "rev": "4cd6bbca920879b797be58bc4ddffdbc718fa4fe",
         "type": "github"
       },
       "original": {
@@ -132,11 +132,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1695684520,
-        "narHash": "sha256-yORqGB0i1OtEf9MOCCT2BIbOd8txPZn216CM+ylMmhY=",
+        "lastModified": 1697031886,
+        "narHash": "sha256-oTMPX8dGC7yxSwrbF4NuPNQsUEcHB1dusW2yEbFD5zg=",
         "owner": "hercules-ci",
         "repo": "hercules-ci-effects",
-        "rev": "91fae5824f5f1199f61693c6590b4a89abaed9d7",
+        "rev": "178b36dc3a75c96efc25477d45eafc37ba1fafc3",
         "type": "github"
       },
       "original": {
@@ -199,11 +199,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1696577711,
-        "narHash": "sha256-94VRjvClIKDym1QRqPkX5LTQoAwZ1E6QE/3dWtOXSIQ=",
+        "lastModified": 1697009197,
+        "narHash": "sha256-viVRhBTFT8fPJTb1N3brQIpFZnttmwo3JVKNuWRVc3s=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a2eb207f45e4a14a1e3019d9e3863d1e208e2295",
+        "rev": "01441e14af5e29c9d27ace398e6dd0b293e25a54",
         "type": "github"
       },
       "original": {
