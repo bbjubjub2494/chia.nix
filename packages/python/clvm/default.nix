@@ -1,12 +1,12 @@
-{ lib
-, buildPythonPackage
-, fetchFromGitHub
-, pythonOlder
-, blspy
-, setuptools-scm
-, pytestCheckHook
+{
+  lib,
+  buildPythonPackage,
+  fetchFromGitHub,
+  pythonOlder,
+  blspy,
+  setuptools-scm,
+  pytestCheckHook,
 }:
-
 buildPythonPackage rec {
   pname = "clvm";
   version = "0.9.7";
@@ -47,6 +47,6 @@ buildPythonPackage rec {
     description = "Chia Lisp virtual machine";
     homepage = "https://www.chia.net/";
     license = licenses.asl20;
-    maintainers = [ ];
+    maintainers = [];
   };
 }

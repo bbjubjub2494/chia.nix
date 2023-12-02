@@ -1,14 +1,14 @@
-{ stdenv
-, lib
-, buildPythonPackage
-, fetchPypi
-, cmake
-, pybind11
-, pythonOlder
-, pytestCheckHook
-, setuptools-scm
+{
+  stdenv,
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  cmake,
+  pybind11,
+  pythonOlder,
+  pytestCheckHook,
+  setuptools-scm,
 }:
-
 buildPythonPackage rec {
   pname = "chiabip158";
   version = "1.3";
@@ -19,9 +19,9 @@ buildPythonPackage rec {
     hash = "sha256-HUgYVVQ7yc2X3ffnV7mCZf+oFUHl/29Mb4n91dRJ7gc=";
   };
 
-  nativeBuildInputs = [ cmake setuptools-scm ];
+  nativeBuildInputs = [cmake setuptools-scm];
 
-  buildInputs = [ pybind11 ];
+  buildInputs = [pybind11];
 
   nativeCheckInputs = [
     pytestCheckHook
@@ -35,6 +35,6 @@ buildPythonPackage rec {
     description = "Chia's implementation of BIP 158";
     homepage = "https://www.chia.net/";
     license = licenses.asl20;
-    maintainers = [ ];
+    maintainers = [];
   };
 }
