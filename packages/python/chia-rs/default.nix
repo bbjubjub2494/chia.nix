@@ -50,6 +50,6 @@ buildPythonPackage rec {
     description = "Rust crate & wheel with consensus code";
     homepage = "https://github.com/Chia-Network/chia_rs/";
     license = licenses.asl20;
-    maintainers = teams.chia.members;
+    maintainers = [ ];
   };
 }
