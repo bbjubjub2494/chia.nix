@@ -2,9 +2,10 @@
   stdenv,
   lib,
   substituteAll,
-  fetchpatch,
   buildPythonPackage,
   fetchPypi,
+  fetchFromGitHub,
+  bladebit,
   catch2,
   cmake,
   cxxopts,
@@ -17,12 +18,12 @@
 }:
 buildPythonPackage rec {
   pname = "chiapos";
-  version = "1.0.11";
+  version = "2.0.3";
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-TMRf9549z3IQzGt5c53Rk1Vq3tdrpZ3Pqc8jhj4AKzo=";
+    hash = "sha256-2bP1xwSWXqEVAKs033GmgddicfbIx9xK65JfqY24JJ4=";
   };
 
   patches = [
@@ -30,13 +31,14 @@ buildPythonPackage rec {
     (substituteAll {
       src = ./dont_fetch_dependencies.patch;
       inherit cxxopts ghc_filesystem;
-      catch2_src = catch2.src;
+      bladebit = bladebit.src;
       pybind11_src = pybind11.src;
-    })
-    # adjust use of setuptools to support version 68.2
-    (fetchpatch {
-      url = "https://github.com/Chia-Network/chiapos/commit/7f1f011788742c5e59d3b18fc007265bd8787dea.patch";
-      hash = "sha256-L6k+jJv+4p3TlDMyzFr042bejw/C7pqcEwM+/+p1B+c=";
+      catch2_src = fetchFromGitHub {
+        owner = "catchorg";
+        repo = "Catch2";
+        rev = "v3.3.2"; # pinned by src
+        hash = "sha256-t/4iCrzPeDZNNlgibVqx5rhe+d3lXwm1GmBMDDId0VQ=";
+      };
     })
   ];
 
