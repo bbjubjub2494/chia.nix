@@ -1,13 +1,13 @@
-{ stdenv
-, lib
-, fetchFromGitHub
-, buildPythonPackage
-, rustPlatform
-, pythonOlder
-, openssl
-, perl
+{
+  stdenv,
+  lib,
+  fetchFromGitHub,
+  buildPythonPackage,
+  rustPlatform,
+  pythonOlder,
+  openssl,
+  perl,
 }:
-
 buildPythonPackage rec {
   pname = "clvm_rs";
   version = "0.3.0";
@@ -30,22 +30,24 @@ buildPythonPackage rec {
 
   buildAndTestSubdir = "wheel";
 
-  nativeBuildInputs = [
-    perl # used by openssl-sys to configure
-  ] ++ (with rustPlatform; [
-    cargoSetupHook
-    maturinBuildHook
-  ]);
+  nativeBuildInputs =
+    [
+      perl # used by openssl-sys to configure
+    ]
+    ++ (with rustPlatform; [
+      cargoSetupHook
+      maturinBuildHook
+    ]);
 
-  buildInputs = [ openssl ];
+  buildInputs = [openssl];
 
-  pythonImportsCheck = [ "clvm_rs" ];
+  pythonImportsCheck = ["clvm_rs"];
 
   meta = with lib; {
     broken = stdenv.isDarwin;
     homepage = "https://chialisp.com/";
     description = "Rust implementation of clvm";
     license = licenses.asl20;
-    maintainers = [ ];
+    maintainers = [];
   };
 }

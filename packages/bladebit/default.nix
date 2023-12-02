@@ -1,13 +1,13 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, applyPatches
-, cmake
-, numactl
-, substituteAll
-, python3Packages
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  applyPatches,
+  cmake,
+  numactl,
+  substituteAll,
+  python3Packages,
 }:
-
 stdenv.mkDerivation rec {
   pname = "bladebit";
   version = "2.0.1";
@@ -23,12 +23,12 @@ stdenv.mkDerivation rec {
     # prevent CMake from trying to get libraries on the Internet
     (substituteAll {
       src = ./dont_fetch_dependencies.patch;
-      blspy_src = applyPatches { inherit (python3Packages.blspy) src patches; };
+      blspy_src = applyPatches {inherit (python3Packages.blspy) src patches;};
     })
   ];
 
-  nativeBuildInputs = [ cmake ];
-  buildInputs = [ numactl ];
+  nativeBuildInputs = [cmake];
+  buildInputs = [numactl];
 
   installPhase = ''
     runHook preInstall
@@ -38,12 +38,11 @@ stdenv.mkDerivation rec {
     runHook postInstall
   '';
 
-
   meta = with lib; {
     homepage = "https://github.com/Chia-Network/bladebit";
     description = "BladeBit - Fast Chia (XCH) k32-only Plotter";
-    license = with licenses; [ asl20 ];
-    maintainers = [ ];
+    license = with licenses; [asl20];
+    maintainers = [];
     platforms = platforms.linux;
   };
 }

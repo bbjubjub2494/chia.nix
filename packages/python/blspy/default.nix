@@ -1,16 +1,16 @@
-{ lib
-, buildPythonPackage
-, fetchPypi
-, fetchFromGitHub
-, setuptools-scm
-, substituteAll
-, cmake
-, boost
-, gmp
-, pybind11
-, pythonOlder
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  fetchFromGitHub,
+  setuptools-scm,
+  substituteAll,
+  cmake,
+  boost,
+  gmp,
+  pybind11,
+  pythonOlder,
 }:
-
 buildPythonPackage rec {
   pname = "blspy";
   version = "1.0.16";
@@ -55,9 +55,9 @@ buildPythonPackage rec {
       --replace "from setuptools import Extension, setup, setuptools" "from setuptools import Extension, setup"
   '';
 
-  nativeBuildInputs = [ cmake setuptools-scm ];
+  nativeBuildInputs = [cmake setuptools-scm];
 
-  buildInputs = [ boost gmp.static pybind11 ];
+  buildInputs = [boost gmp.static pybind11];
 
   pythonImportsCheck = [
     "blspy"
@@ -73,6 +73,6 @@ buildPythonPackage rec {
     description = "BLS signatures with aggregation";
     homepage = "https://github.com/Chia-Network/bls-signatures/";
     license = licenses.asl20;
-    maintainers = [ ];
+    maintainers = [];
   };
 }
