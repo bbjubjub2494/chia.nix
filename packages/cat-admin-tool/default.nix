@@ -1,5 +1,4 @@
 { lib
-, src
 , fetchFromGitHub
 , python3Packages
 , chia
@@ -9,7 +8,12 @@ python3Packages.buildPythonApplication rec {
   pname = "CAT-admin-tool";
   version = "unstable";
 
-  inherit src;
+  src = fetchFromGitHub {
+    owner = "Chia-Network";
+    repo = "CAT-admin-tool";
+    rev = "b9348399b1885aa94069f6ea4e1ec9960fefb05e";
+    hash = "sha256-+C0nw8VmyAGSFdcXNQSc0WJvkGK/IiPpyfR63hZd7NI=";
+  };
 
   postPatch = ''
     substituteInPlace setup.py \

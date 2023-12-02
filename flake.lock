@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "cat-admin-tool": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1698240318,
-        "narHash": "sha256-wxyFQsMKHaAES5mqhKCTmrkmAZE9n16kTz83YDLtKJk=",
-        "owner": "Chia-Network",
-        "repo": "CAT-admin-tool",
-        "rev": "a2b979684b4e285fda1d2234e0e7ea1210ee37c9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Chia-Network",
-        "repo": "CAT-admin-tool",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -124,7 +108,6 @@
     },
     "root": {
       "inputs": {
-        "cat-admin-tool": "cat-admin-tool",
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "hercules-ci-effects": "hercules-ci-effects",
