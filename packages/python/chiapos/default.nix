@@ -1,20 +1,20 @@
-{ stdenv
-, lib
-, substituteAll
-, fetchpatch
-, buildPythonPackage
-, fetchPypi
-, catch2
-, cmake
-, cxxopts
-, ghc_filesystem
-, pybind11
-, pytestCheckHook
-, pythonOlder
-, psutil
-, setuptools-scm
+{
+  stdenv,
+  lib,
+  substituteAll,
+  fetchpatch,
+  buildPythonPackage,
+  fetchPypi,
+  catch2,
+  cmake,
+  cxxopts,
+  ghc_filesystem,
+  pybind11,
+  pytestCheckHook,
+  pythonOlder,
+  psutil,
+  setuptools-scm,
 }:
-
 buildPythonPackage rec {
   pname = "chiapos";
   version = "1.0.11";
@@ -40,9 +40,9 @@ buildPythonPackage rec {
     })
   ];
 
-  nativeBuildInputs = [ cmake setuptools-scm ];
+  nativeBuildInputs = [cmake setuptools-scm];
 
-  buildInputs = [ pybind11 ];
+  buildInputs = [pybind11];
 
   nativeCheckInputs = [
     psutil
@@ -63,6 +63,6 @@ buildPythonPackage rec {
     description = "Chia proof of space library";
     homepage = "https://www.chia.net/";
     license = licenses.asl20;
-    maintainers = [ ];
+    maintainers = [];
   };
 }
