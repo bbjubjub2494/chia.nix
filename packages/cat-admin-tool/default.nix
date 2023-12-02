@@ -36,7 +36,7 @@ python3Packages.buildPythonApplication rec {
     homepage = "https://www.chia.net/";
     description = "Admin tool for issuing CATs";
     license = with licenses; [ asl20 ];
-    maintainers = teams.chia.members;
+    maintainers = [ ];
     platforms = platforms.all;
   };
 }

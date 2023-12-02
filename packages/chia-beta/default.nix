@@ -93,7 +93,7 @@ let chia = python3Packages.buildPythonApplication rec {
     homepage = "https://www.chia.net/";
     description = "Chia is a modern cryptocurrency built from scratch, designed to be efficient, decentralized, and secure.";
     license = with licenses; [ asl20 ];
-    maintainers = teams.chia.members;
+    maintainers = [];
     platforms = platforms.all;
   };
 };

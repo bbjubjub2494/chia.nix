@@ -16,25 +16,23 @@ pkgs.extend (final: prev:
 {
   python3Packages = prev.python3Packages.override {
     overrides = final': prev':
-      replaceOlderAttr prev'
-        {
-          based58 = final'.callPackage python/based58 { };
-          boto3 = final'.callPackage python/boto3 { };
-          botocore = final'.callPackage python/botocore { };
-          chia-rs = final'.callPackage python/chia-rs { };
-          chiavdf = final'.callPackage python/chiavdf { };
-          cryptography = final'.callPackage python/cryptography {
-            Security = if final.stdenv.isDarwin then final.Security else null;
-          };
-          packaging = final'.callPackage python/packaging { };
-          typing-extensions = final'.callPackage python/typing-extensions { };
-          zstd = final'.callPackage python/zstd { inherit (final) zstd; };
-        } // {
+      {
+        based58 = final'.callPackage python/based58 { };
+        blspy = final'.callPackage python/blspy { };
+        chia-rs = final'.callPackage python/chia-rs { };
+        chiabip158 = final'.callPackage python/chiabip158 { };
+        chiavdf = final'.callPackage python/chiavdf { };
+        chiapos = final'.callPackage python/chiapos { };
+        clvm = final'.callPackage python/clvm { };
+        clvm-rs = final'.callPackage python/clvm-rs { };
+        clvm-tools = final'.callPackage python/clvm-tools { };
+        clvm-tools-rs = final'.callPackage python/clvm-tools-rs { };
+        zstd = final'.callPackage python/zstd { inherit (final) zstd; };
         twisted = prev'.twisted.overrideAttrs (_: { doInstallCheck = false; });
       };
   };
   chia-dev-tools = final.callPackage ./chia-dev-tools { };
-} // replaceOlderAttr prev {
+
   # https://nixpk.gs/pr-tracker.html?pr=201542
   bladebit = final.callPackage ./bladebit { };
 
