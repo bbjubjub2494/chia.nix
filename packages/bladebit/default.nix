@@ -43,7 +43,7 @@ stdenv.mkDerivation rec {
     homepage = "https://github.com/Chia-Network/bladebit";
     description = "BladeBit - Fast Chia (XCH) k32-only Plotter";
     license = with licenses; [ asl20 ];
-    maintainers = teams.chia.members;
+    maintainers = [ ];
     platforms = platforms.linux;
   };
 }
