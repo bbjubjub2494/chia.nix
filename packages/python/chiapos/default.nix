@@ -1,58 +1,66 @@
-{ lib
-, stdenv
-, buildPythonPackage
-, fetchpatch
-, fetchPypi
-, setuptools-scm
+{ stdenv
+, lib
 , substituteAll
+, fetchpatch
+, buildPythonPackage
+, fetchPypi
+, catch2
 , cmake
-, boost
-, gmp
+, cxxopts
+, ghc_filesystem
 , pybind11
 , pytestCheckHook
 , pythonOlder
+, psutil
+, setuptools-scm
 }:
 
 buildPythonPackage rec {
-  pname = "chiavdf";
-  version = "1.0.9";
+  pname = "chiapos";
+  version = "1.0.11";
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-G4npp0G8TNk2y/T6myNr8NCfkBdcknsWds+XBZiNnQY=";
+    hash = "sha256-TMRf9549z3IQzGt5c53Rk1Vq3tdrpZ3Pqc8jhj4AKzo=";
   };
 
   patches = [
     # prevent CMake from trying to get libraries on the Internet
     (substituteAll {
       src = ./dont_fetch_dependencies.patch;
+      inherit cxxopts ghc_filesystem;
+      catch2_src = catch2.src;
       pybind11_src = pybind11.src;
     })
     # adjust use of setuptools to support version 68.2
     (fetchpatch {
-      url = "https://github.com/Chia-Network/chiavdf/commit/7c6a7680dc8ce4386a60058e61fa7cb3526595e1.patch";
-      hash = "sha256-80w3MDLdcjHKNFCp9vJ4SCFVjlPKZzQgXrDLB8OHdJE=";
+      url = "https://github.com/Chia-Network/chiapos/commit/7f1f011788742c5e59d3b18fc007265bd8787dea.patch";
+      hash = "sha256-L6k+jJv+4p3TlDMyzFr042bejw/C7pqcEwM+/+p1B+c=";
     })
   ];
 
-  # x86 instructions are needed for this component
-  BUILD_VDF_CLIENT = lib.optionalString (!stdenv.isx86_64) "N";
-
   nativeBuildInputs = [ cmake setuptools-scm ];
 
-  buildInputs = [ boost gmp pybind11 ];
+  buildInputs = [ pybind11 ];
 
   nativeCheckInputs = [
+    psutil
     pytestCheckHook
   ];
+
+  # A fix for cxxopts >=3.1
+  postPatch = ''
+    substituteInPlace src/cli.cpp \
+      --replace "cxxopts::OptionException" "cxxopts::exceptions::exception"
+  '';
 
   # CMake needs to be run by setuptools rather than by its hook
   dontConfigure = true;
 
   meta = with lib; {
     broken = stdenv.isDarwin;
-    description = "Chia verifiable delay function utilities";
+    description = "Chia proof of space library";
     homepage = "https://www.chia.net/";
     license = licenses.asl20;
     maintainers = [ ];
