@@ -27,8 +27,6 @@ pkgs.extend (final: prev:
         clvm-rs = final'.callPackage python/clvm-rs { };
         clvm-tools = final'.callPackage python/clvm-tools { };
         clvm-tools-rs = final'.callPackage python/clvm-tools-rs { };
-        zstd = final'.callPackage python/zstd { inherit (final) zstd; };
-        twisted = prev'.twisted.overrideAttrs (_: { doInstallCheck = false; });
       };
   };
   chia-dev-tools = final.callPackage ./chia-dev-tools { };
