@@ -1,8 +1,9 @@
-{ system
-, fetchzip
-, python3Packages
-, chia
-, ...
+{
+  system,
+  fetchzip,
+  python3Packages,
+  chia,
+  ...
 }:
 python3Packages.buildPythonApplication rec {
   pname = "dexie-rewards";
@@ -11,7 +12,6 @@ python3Packages.buildPythonApplication rec {
   src = fetchzip {
     url = "https://pypi.io/packages/source/d/dexie-rewards/dexie_rewards-${version}.tar.gz";
     sha256 = "sha256-yDQgUpzt4M/FTO4rJ/imNOfOTeHq5lRMvzj9py+iDzk=";
-
   };
   format = "pyproject";
 

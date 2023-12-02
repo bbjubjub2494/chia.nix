@@ -1,9 +1,10 @@
-{ buildPythonPackage
-, lib
-, fetchFromGitHub
-, pytestCheckHook
-, rustPlatform
-, clvm-tools
+{
+  buildPythonPackage,
+  lib,
+  fetchFromGitHub,
+  pytestCheckHook,
+  rustPlatform,
+  clvm-tools,
 }:
 buildPythonPackage rec {
   pname = "chia-rs";
@@ -50,6 +51,6 @@ buildPythonPackage rec {
     description = "Rust crate & wheel with consensus code";
     homepage = "https://github.com/Chia-Network/chia_rs/";
     license = licenses.asl20;
-    maintainers = [ ];
+    maintainers = [];
   };
 }

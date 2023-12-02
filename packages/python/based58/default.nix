@@ -1,7 +1,8 @@
-{ fetchPypi
-, python3Packages
-, rustPlatform
-, ...
+{
+  fetchPypi,
+  python3Packages,
+  rustPlatform,
+  ...
 }:
 python3Packages.buildPythonApplication rec {
   pname = "based58";
@@ -11,7 +12,6 @@ python3Packages.buildPythonApplication rec {
     inherit pname version;
     sha256 = "sha256-gIBLNGs0GWyJ3Ho9yJtgIfkQ9M11qsQdQzyhiAsWctw=";
   };
-
 
   cargoDeps = rustPlatform.importCargoLock {
     lockFile = ./Cargo.lock;
