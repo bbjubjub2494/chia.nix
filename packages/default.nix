@@ -35,9 +35,7 @@ pkgs.extend (final: prev:
   bladebit = final.callPackage ./bladebit { };
 
   # not suitable for Nixpkgs
-  cat-admin-tool = final.callPackage ./cat-admin-tool {
-    src = inputs.cat-admin-tool;
-  };
+  cat-admin-tool = final.callPackage ./cat-admin-tool { };
   chia = final.callPackage ./chia { };
   chia-beta = final.callPackage ./chia-beta { };
   chia-rc = final.callPackage ./chia-rc { };
