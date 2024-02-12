@@ -15,12 +15,12 @@
 }:
 buildPythonPackage rec {
   pname = "chiavdf";
-  version = "1.0.9";
+  version = "1.1.1";
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-G4npp0G8TNk2y/T6myNr8NCfkBdcknsWds+XBZiNnQY=";
+    hash = "sha256-X68i5hfWEe/7dHOKluebGnqxzrjUbYxIEvkIqFZL0Eg=";
   };
 
   patches = [
@@ -28,11 +28,6 @@ buildPythonPackage rec {
     (substituteAll {
       src = ./dont_fetch_dependencies.patch;
       pybind11_src = pybind11.src;
-    })
-    # adjust use of setuptools to support version 68.2
-    (fetchpatch {
-      url = "https://github.com/Chia-Network/chiavdf/commit/7c6a7680dc8ce4386a60058e61fa7cb3526595e1.patch";
-      hash = "sha256-80w3MDLdcjHKNFCp9vJ4SCFVjlPKZzQgXrDLB8OHdJE=";
     })
   ];
 
